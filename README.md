@@ -16,6 +16,7 @@ Furthermore it adds the service `appwash.buy_service` which will buy and start t
 1. Ensure that [HACS](https://custom-components.github.io/hacs/) is installed.
 2. Add this repository as custom repository
 3. Search for AppWash and install it!
+4. Restart Home Assistant.
 
 ## Configuration
 
