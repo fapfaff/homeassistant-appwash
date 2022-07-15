@@ -12,7 +12,8 @@
             "user": {
                 "data": {
                     "password": "Password",
-                    "username": "Username"
+                    "email": "Email",
+                    "location": "Location ID"
                 }
             }
         }
