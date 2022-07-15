@@ -6,6 +6,7 @@ from typing import Any
 
 import voluptuous as vol
 from appwashpy import check_credentials
+
 from homeassistant import config_entries
 from homeassistant.const import CONF_EMAIL, CONF_LOCATION, CONF_PASSWORD
 from homeassistant.core import HomeAssistant
@@ -26,7 +27,7 @@ STEP_USER_DATA_SCHEMA = vol.Schema(
 
 
 def validate_credentials(email, password) -> bool:
-    """Checks if the email and password combination is valid."""
+    """Check if the email and password combination is valid."""
     try:
         return check_credentials(email, password)
     except Exception as exc:
