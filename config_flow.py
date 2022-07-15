@@ -6,7 +6,6 @@ from typing import Any
 
 import voluptuous as vol
 from appwashpy import check_credentials
-
 from homeassistant import config_entries
 from homeassistant.const import CONF_EMAIL, CONF_LOCATION, CONF_PASSWORD
 from homeassistant.core import HomeAssistant

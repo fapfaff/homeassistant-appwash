@@ -1,10 +1,9 @@
-"""Platform for sensor integration."""
+"""Support for AppWash Services as Sensor."""
 from __future__ import annotations
 
 import logging
 
 from appwashpy import AppWash, Service
-
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
