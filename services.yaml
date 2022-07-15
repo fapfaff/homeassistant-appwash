@@ -1,4 +1,4 @@
 buy_service:
   name: Buy AppWash Service
   description: Buys and starts the AppWash service.
-  target: entity_id
+  target: entity

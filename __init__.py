@@ -4,7 +4,8 @@ from __future__ import annotations
 from appwashpy import AppWash
 
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_EMAIL, CONF_LOCATION, CONF_PASSWORD, Platform
+from homeassistant.const import (CONF_EMAIL, CONF_LOCATION, CONF_PASSWORD,
+                                 Platform)
 from homeassistant.core import HomeAssistant
 
 from .const import DOMAIN

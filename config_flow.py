@@ -4,8 +4,8 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from appwashpy import check_credentials
 import voluptuous as vol
+from appwashpy import check_credentials
 
 from homeassistant import config_entries
 from homeassistant.const import CONF_EMAIL, CONF_LOCATION, CONF_PASSWORD
