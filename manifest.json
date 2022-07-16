@@ -1,18 +1,14 @@
 {
-    "domain": "appwash",
-    "name": "AppWash",
-    "config_flow": true,
-    "documentation": "https://www.home-assistant.io/integrations/appwash",
-    "requirements": [
-        "appwashpy==1.2.3"
-    ],
-    "ssdp": [],
-    "zeroconf": [],
-    "homekit": {},
-    "dependencies": [],
-    "codeowners": [
-        "@fapfaff"
-    ],
-    "iot_class": "cloud_polling",
-    "version": "1.0.0"
+  "domain": "appwash",
+  "name": "AppWash",
+  "config_flow": true,
+  "documentation": "https://www.home-assistant.io/integrations/appwash",
+  "requirements": ["appwashpy==1.2.4"],
+  "ssdp": [],
+  "zeroconf": [],
+  "homekit": {},
+  "dependencies": [],
+  "codeowners": ["@fapfaff"],
+  "iot_class": "cloud_polling",
+  "version": "1.0.0"
 }

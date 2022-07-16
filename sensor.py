@@ -4,6 +4,8 @@ from __future__ import annotations
 import logging
 
 from appwashpy import AppWash, Service
+from appwashpy.common.enums import SERVICE_TYPE, STATE
+
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
@@ -50,12 +52,35 @@ class AppWashStateSensor(SensorEntity):
 
         self._attr_unique_id = service.service_id
         self._attr_name = service.name + " " + service.service_id
+        self._service_type = service.type
+
+        self.set_icon()
+
+    def set_icon(self):
+        """Set the icon based on the service type and the current state."""
+        state = ""
+        if self._attr_native_value == STATE.AVAILABLE.name:
+            state = ""
+        elif self._attr_native_value == STATE.STOPPABLE.name:
+            state = "-alert"
+        elif self._attr_native_value == STATE.OCCUPIED.name:
+            state = "-off"
+        elif self._attr_native_value == STATE.FAULTED.name:
+            state = "-off"
+
+        if self._service_type == SERVICE_TYPE.WASHING_MACHINE.name:
+            self._attr_icon = f"mdi:washing-machine{state}"
+        elif self._service_type == SERVICE_TYPE.DRYER.name:
+            self._attr_icon = f"mdi:tumble-dryer{state}"
+        elif self._service_type == SERVICE_TYPE.ELECTRICITY.name:
+            self._attr_icon = "mdi:lightning-bolt"
 
     def update(self) -> None:
         """Fetch new state data for the sensor."""
 
         service: Service = self._appwash.service(self.unique_id)
         self._attr_native_value = service.state
+        self.set_icon()
 
     def buy_service(self) -> None:
         """Buy and start the AppWash service."""
