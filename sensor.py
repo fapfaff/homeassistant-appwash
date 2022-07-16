@@ -85,7 +85,12 @@ class AppWashStateSensor(SensorEntity):
     def buy_service(self) -> None:
         """Buy and start the AppWash service."""
         _LOGGER.info("Buying AppWash-Service %s", self.unique_id)
-        self._appwash.buy_service(self.unique_id)
+        self._appwash.buy_service(self.unique_id, safe=True)
+
+    def stop_service(self) -> None:
+        """Stop the AppWash service."""
+        _LOGGER.info("Stopping AppWash-Service %s", self.unique_id)
+        self._appwash.stop_service(self.unique_id)
 
     @property
     def device_info(self):

@@ -3,7 +3,7 @@
   "name": "AppWash",
   "config_flow": true,
   "documentation": "https://www.home-assistant.io/integrations/appwash",
-  "requirements": ["appwashpy==1.2.4"],
+  "requirements": ["appwashpy==1.2.5"],
   "ssdp": [],
   "zeroconf": [],
   "homekit": {},
