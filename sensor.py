@@ -4,7 +4,6 @@ from __future__ import annotations
 import logging
 
 from appwashpy import AppWash, Service
-
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
@@ -47,10 +46,10 @@ class AppWashStateSensor(SensorEntity):
     def __init__(self, appwash: AppWash, service: Service) -> None:
         """Create a sensor for the state of an AppWash Service."""
         self._appwash = appwash
+        self._location_id = service.location_id
 
         self._attr_unique_id = service.service_id
         self._attr_name = service.name + " " + service.service_id
-        self._location_id = service.location_id
 
     def update(self) -> None:
         """Fetch new state data for the sensor."""
@@ -67,7 +66,7 @@ class AppWashStateSensor(SensorEntity):
     def device_info(self):
         """Information about the device the sensor belongs to."""
         return {
-            "identifiers": {self.unique_id},
+            "identifiers": {(DOMAIN, self.unique_id)},
             "name": self._attr_name,
             "areaId": self._location_id,
             "manufacturer": "Miele",
