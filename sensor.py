@@ -12,7 +12,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers import entity_platform
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .const import DOMAIN, SERVICE_BUY_SERVICE
+from .const import DOMAIN, SERVICE_BUY_SERVICE, SERVICE_STOP_SERVICE
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -33,6 +33,7 @@ async def async_setup_entry(
 
     platform = entity_platform.async_get_current_platform()
     platform.async_register_entity_service(SERVICE_BUY_SERVICE, {}, "buy_service")
+    platform.async_register_entity_service(SERVICE_STOP_SERVICE, {}, "stop_service")
 
 
 class AppWashStateSensor(SensorEntity):
