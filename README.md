@@ -1,7 +1,8 @@
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
 # AppWash
 The `appwash` integration adds support for devices that can be used via Miele AppWash.
 It offers a sensor for the state of the device.
-Furthermore it adds the services `appwash.buy_service` and `appwash.stop_service` which will buy and start or stop the device.
+Furthermore it adds the services `appwash.buy_service` and `appwash.stop_service` which will buy/start or stop the device.
 
 ## Installation
 ### Manual Installation
